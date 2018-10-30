@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DDC14F692178D7CC00043214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC14F682178D7CC00043214 /* AppDelegate.swift */; };
-		DDC14F6B2178D7CC00043214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC14F6A2178D7CC00043214 /* ViewController.swift */; };
+		DDC14F6B2178D7CC00043214 /* GameViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC14F6A2178D7CC00043214 /* GameViewControler.swift */; };
 		DDC14F6E2178D7CC00043214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC14F6C2178D7CC00043214 /* Main.storyboard */; };
 		DDC14F702178D7CE00043214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDC14F6F2178D7CE00043214 /* Assets.xcassets */; };
 		DDC14F732178D7CE00043214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC14F712178D7CE00043214 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		DDC14F652178D7CC00043214 /* iOS Triva Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Triva Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC14F682178D7CC00043214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDC14F6A2178D7CC00043214 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDC14F6A2178D7CC00043214 /* GameViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControler.swift; sourceTree = "<group>"; };
 		DDC14F6D2178D7CC00043214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDC14F6F2178D7CE00043214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDC14F722178D7CE00043214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				DDC14F682178D7CC00043214 /* AppDelegate.swift */,
 				DDC14F7A217A2A9B00043214 /* AddQuestionViewControlerViewController.swift */,
-				DDC14F6A2178D7CC00043214 /* ViewController.swift */,
+				DDC14F6A2178D7CC00043214 /* GameViewControler.swift */,
 				DDC14F7C217A2B6B00043214 /* QuestionClass.swift */,
 				DDC14F6C2178D7CC00043214 /* Main.storyboard */,
 				DDC14F6F2178D7CE00043214 /* Assets.xcassets */,
@@ -143,7 +143,7 @@
 			files = (
 				DDC14F7D217A2B6B00043214 /* QuestionClass.swift in Sources */,
 				DDC14F7B217A2A9B00043214 /* AddQuestionViewControlerViewController.swift in Sources */,
-				DDC14F6B2178D7CC00043214 /* ViewController.swift in Sources */,
+				DDC14F6B2178D7CC00043214 /* GameViewControler.swift in Sources */,
 				DDC14F692178D7CC00043214 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
