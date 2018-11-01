@@ -53,9 +53,8 @@ class AddQuestionViewControlerViewController: UIViewController {
                 return
         }
         
-        newTriva = TrivaQuestion(
-            question: NSMetadataUbiquitousItemPercentDownloadedKey, answers: [a,b,c,d], correctAnswerIndex: CorrectAnswerSlector.selectedSegmentIndex)
-           performSegue(withIdentifier: "unwindSegueToQuizScreen", sender:self)
+        newTriva = TrivaQuestion(question: question, answers: [a,b,c,d], correctAnswerIndex: CorrectAnswerSlector.selectedSegmentIndex)
+        performSegue(withIdentifier: "unwindSegueToQuizScreen", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

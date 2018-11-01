@@ -27,15 +27,20 @@ class GameViewController: UIViewController {
     
     
     @IBAction func answerTaped(_ sender: UIButton) {
-        
+        if self.questions.count == 0 {
+        showGameOverAlert()
+        }
         if currentQuestion.correctAnswerIndex == sender.tag {
             score += 1
             showCorrectAnswerAlert()
-            
+            //Need to fill out showCorrecrtAnswerAlert
         } else {
             showIncorrectAnswerAlert()
         }
-        getNewQuestion()
+        if self.questions.count == 0 {
+            showGameOverAlert()
+        }
+        
     }
     
     var questionsPlaceHolder = [TrivaQuestion]()
@@ -46,20 +51,16 @@ class GameViewController: UIViewController {
             self.questionsPlaceHolder.append(self.questions[self.currentIndex])
         
           self.questions.remove(at:self.currentIndex) 
-            
+            self.getNewQuestion()
         }
         correctAlert.addAction(okayAction)
          self.present(correctAlert, animated: true, completion: nil)
-        self.getNewQuestion()
+        
     }
     
     @IBAction func resetGame(_ sender: Any) {
-        score = 0
-        getNewQuestion()
-        populateQuestion()
-        
-        
-    }
+        resetGame()
+        }
     
     
     
@@ -83,8 +84,9 @@ class GameViewController: UIViewController {
     func showGameOverAlert() {
         let endAlert = UIAlertController(title: "Triva Results", message: "Game Over! Your score was \(score) out of \(questionsPlaceHolder.count)", preferredStyle: UIAlertController.Style.alert)
         let resetAction = UIAlertAction(title: "Reset", style: UIAlertAction.Style.default) {UIAlertAction in self.resetGame()}
-        
-        
+        endAlert.addAction(resetAction)
+        self.present(endAlert, animated: true, completion:  nil)
+        resetGame()
     }
     
  
@@ -129,18 +131,26 @@ class GameViewController: UIViewController {
     func populateQuestion()  {
         let question1 = TrivaQuestion(question: "How It Do", answers: ["It do", "Do It", "It Dont","It Good"], correctAnswerIndex: 0)
         let question2 = TrivaQuestion(question: "Whats 2 + 2", answers: ["1", "45", "22", "4"], correctAnswerIndex: 3)
-        let question3 = TrivaQuestion(question: "What school are you at", answers: ["Glassgow High", "Barren County Middle", "Barren County High", "School for clowns"], correctAnswerIndex: 3)
+        let question3 = TrivaQuestion(question: "What school are you at", answers: ["Glassgow High", "Barren County Middle", "Barren County High", "School for clowns"], correctAnswerIndex: 2)
         let question4 = TrivaQuestion(question: "What Battle ship was the treaty that ened WWII signed on", answers: ["USS.  Main", "USS. Constaution", "HMS. Hood", "USS Missouri"], correctAnswerIndex: 3)
         questions = [question1,question2,question3,question4]
     }
     
     
-    func resetGame () {
-        score = 0
-        getNewQuestion()
-        populateQuestion()
+    
+        func resetGame() {
+            score = 0
+            if !questions.isEmpty {
+                questionsPlaceHolder.append(contentsOf: questions)
+                questions.removeAll()
+            }
+            questions = questionsPlaceHolder
+            questionsPlaceHolder.removeAll()
+            getNewQuestion()
+           
+        }
         
-    }
+    
     
     
     
